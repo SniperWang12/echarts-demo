@@ -20,8 +20,8 @@ export default [
         component: '@/pages/Charts/index',
       },
       {
-        path: '/web-worker',
-        name: 'web worker',
+        path: '/process',
+        name: 'process',
         component: '@/pages/WebWorker/index',
       },
     ],

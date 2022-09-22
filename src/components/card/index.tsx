@@ -8,6 +8,7 @@ interface IProps {
   content: any;
   title: string;
   code: any;
+  contentBgColor?: string;
 }
 
 const ContentCard: React.FC<IProps> = (props: IProps) => {
@@ -32,7 +33,17 @@ const ContentCard: React.FC<IProps> = (props: IProps) => {
             </Tooltip>,
           ]}
         >
-          <div className="card-content">{props.content}</div>
+          <div
+            className="card-content"
+            style={{
+              backgroundColor: props.contentBgColor || 'unset',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            {props.content}
+          </div>
         </Card>
       </Col>
     </Fragment>

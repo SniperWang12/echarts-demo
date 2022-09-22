@@ -69,9 +69,9 @@ const App: React.FC<IProps> = (props: IProps) => {
                 label: 'ECharts',
               },
               {
-                key: '/web-worker',
+                key: '/process',
                 icon: <VideoCameraOutlined />,
-                label: 'Loading',
+                label: 'Process',
               },
               // {
               //   key: '3',
