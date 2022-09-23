@@ -20,4 +20,5 @@ export default defineConfig({
       changeOrigin: true,
     },
   },
+  publicPath: '/',
 });

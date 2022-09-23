@@ -2,6 +2,25 @@ const chart1_option = {
   // 鼠标浮动数据弹窗展示区域
   tooltip: {
     trigger: 'axis', // https://echarts.apache.org/zh/option.html#tooltip.trigger 设置弹窗展示的内容类似于shared
+    // 自定义设置tooltip
+    formatter(params) {
+      const imagePath = '/images/slash_AllPower.png';
+      let val0 = params[0]['value'];
+      let val1 = params[1]['value'];
+      let val2 = params[2]['value'];
+      let circle = `<span style="display:inline-block;margin-right:5px;border-radius:50%;width:10px;height:10px;left:5px;background:`;
+      // 针对图表中的纹理图片设置相应的tooltip
+      let circleTexture = `<span style="display:inline-block;margin-right:5px;border-radius:50%;width:10px;height:10px;left:5px;background-image:`;
+      let data0 =
+        circleTexture +
+        `url('${imagePath}')"></span> ${params[0]['seriesName']}: ${val1}ml`;
+      let data1 =
+        circle +
+        `rgba(67, 113, 251, 1)"></span> ${params[1]['seriesName']}: ${val1}ml`;
+      let data2 =
+        circle + `rgba(0,0,0,1)"></span> ${params[2]['seriesName']}: ${val2}°C`;
+      return `${params[0].axisValueLabel}<br/>${data0}<br/>${data1}<br/>${data2}`;
+    },
     //
     axisPointer: {
       type: 'cross', // 展示十字交叉还是什么内容
