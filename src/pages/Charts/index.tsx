@@ -61,26 +61,26 @@ export default () => {
             <Charts2 width="100%" height="100%" option={chart2_option} />
           }
           title="瀑布流柱形图↓"
-          code={'the data of code'}
+          code={chart2_option}
         />
         <ContentCard
           content={
             <Chart3 width="100%" height={'100%'} option={chart3_option} />
           }
           title={'双Y轴-分组折线图'}
-          code={'the data of code'}
+          code={chart3_option}
         />
         <ContentCard
           content={<Chart4 width="100%" height="100%" option={chart4_option} />}
           title="坐标轴/grid/label/axisTicks/高亮数据 ↓"
-          code={'the data of code'}
+          code={chart4_option}
         />
         <ContentCard
           content={
             <Chart5 width="100%" height={'100%'} option={chart5_option} />
           }
           title={'分组折线图 & 自定义tooltip内容 ↓'}
-          code={'the data of code'}
+          code={chart5_option}
         />
         <ContentCard
           // chart7_option
@@ -93,14 +93,14 @@ export default () => {
             <Chart8 width="100%" height={'100%'} option={chart8_option} />
           }
           title={'基础面积图 ↓'}
-          code={'the data of code'}
+          code={chart6_option}
         />
         <ContentCard
           content={
             <Chart6 width="100%" height={'100%'} option={chart6_option} />
           }
           title={'面积堆叠图 ↓'}
-          code={'the data of code'}
+          code={chart7_option}
         />
       </Row>
     </ChartWrapper>

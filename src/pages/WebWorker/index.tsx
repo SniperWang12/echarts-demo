@@ -1,5 +1,6 @@
 import { ContentCard } from '@/components/card';
 import ProgressTech from '@/components/ProgressTech';
+import Progress2 from '@/components/ProgressTech/Progress2';
 import { useSafeState } from 'ahooks';
 import { Button, message, Row } from 'antd';
 import { Fragment, useEffect, useState } from 'react';
@@ -42,9 +43,8 @@ export default () => {
           code={process1Path}
         />
         <ContentCard
-          content={<ProgressTech radius={180} progressNum={30} />}
+          content={<Progress2 />}
           title={'进度条2 ↓'}
-          contentBgColor="black"
           code={process2Path}
         />
       </Row>
