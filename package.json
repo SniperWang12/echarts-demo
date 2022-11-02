@@ -27,6 +27,8 @@
     "echarts-for-react": "^3.0.2",
     "markdown": "^0.5.0",
     "marked": "^4.1.0",
+    "mobx": "^6.6.2",
+    "mobx-react-lite": "^3.4.0",
     "react": "17.x",
     "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "17.x",

@@ -36,7 +36,7 @@ const App: React.FC<IProps> = (props: IProps) => {
   };
 
   return (
-    <Wrapper>
+    <Wrapper id="root">
       <Layout className="page-layout-outer" hasSider>
         <Sider
           onBreakpoint={(broken) => {
