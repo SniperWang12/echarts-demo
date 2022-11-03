@@ -24,6 +24,11 @@ export default [
         name: 'process',
         component: '@/pages/WebWorker/index',
       },
+      {
+        path: '/progress',
+        name: 'progress',
+        component: '@/pages/Progress/index',
+      },
     ],
   },
 ];

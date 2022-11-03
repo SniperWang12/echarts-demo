@@ -73,6 +73,11 @@ const App: React.FC<IProps> = (props: IProps) => {
                 icon: <VideoCameraOutlined />,
                 label: 'Process',
               },
+              {
+                key: '/progress',
+                icon: <VideoCameraOutlined />,
+                label: '播放进度条',
+              },
               // {
               //   key: '3',
               //   icon: <UploadOutlined />,
