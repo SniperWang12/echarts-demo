@@ -29,6 +29,11 @@ export default [
         name: 'progress',
         component: '@/pages/Progress/index',
       },
+      {
+        path: '/自定义hook',
+        name: 'hooks',
+        component: '@/pages/Hooks/index',
+      },
     ],
   },
 ];

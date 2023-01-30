@@ -78,6 +78,11 @@ const App: React.FC<IProps> = (props: IProps) => {
                 icon: <VideoCameraOutlined />,
                 label: '播放进度条',
               },
+              {
+                key: '/自定义hook',
+                icon: <VideoCameraOutlined />,
+                label: '自定义hooks',
+              },
               // {
               //   key: '3',
               //   icon: <UploadOutlined />,

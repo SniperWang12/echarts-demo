@@ -1,7 +1,7 @@
 import { useRequest, useUpdateEffect } from 'ahooks';
 import { Button } from 'antd';
 import { observer, useLocalStore } from 'mobx-react-lite';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Wrapper } from './style';
 
 export default observer(() => {
@@ -131,6 +131,7 @@ export default observer(() => {
   const handleGoBack = () => {
     store.setCurrPercent(store.currPercent - 0.01);
   };
+  const [asd, setAsd] = useState('init');
 
   return (
     <Wrapper left={store.left} cursorPointerLeft={store.cursorPointerLeft}>
