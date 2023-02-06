@@ -1,8 +1,11 @@
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
+  ExperimentOutlined,
+  SyncOutlined,
   UserOutlined,
   VideoCameraOutlined,
+  BookOutlined,
 } from '@ant-design/icons';
 import { useSafeState } from 'ahooks';
 import { Layout, Menu, MenuProps } from 'antd';
@@ -15,7 +18,7 @@ interface IProps {
   children: React.FC;
 }
 const App: React.FC<IProps> = (props: IProps) => {
-  const [collapsed, setCollapsed] = useState(true);
+  const [collapsed, setCollapsed] = useState(false);
   const [isHideMenu, setIsHideMenu] = useSafeState(false);
   const [selectedKeys, setSelectedKeys] = useSafeState<Array<string>>([]);
   const logoSrc = {
@@ -54,7 +57,7 @@ const App: React.FC<IProps> = (props: IProps) => {
             ) : (
               <>
                 <img src={logoSrc.withText} alt="" draggable={false} />
-                UI Library
+                王斌
               </>
             )}
           </div>
@@ -75,13 +78,23 @@ const App: React.FC<IProps> = (props: IProps) => {
               },
               {
                 key: '/progress',
-                icon: <VideoCameraOutlined />,
+                icon: <SyncOutlined spin />,
                 label: '播放进度条',
               },
               {
                 key: '/自定义hook',
-                icon: <VideoCameraOutlined />,
+                icon: <ExperimentOutlined />,
                 label: '自定义hooks',
+              },
+              {
+                key: '/JS设计模式',
+                icon: <BookOutlined />,
+                label: 'JS设计模式',
+              },
+              {
+                key: '/自定义Router',
+                icon: <BookOutlined />,
+                label: '自定义Router',
               },
               // {
               //   key: '3',
