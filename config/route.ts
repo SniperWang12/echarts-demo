@@ -37,21 +37,23 @@ export default [
         component: '@/pages/DesignPattern/index',
       },
       {
-        path: '/自定义router/',
+        path: '/customRouter',
+        exact: false,
         component: '@/pages/CustomRouter/index',
         routes: [
           {
-            path: '/',
-            redirect: '/自定义router/menu1',
+            exact: true,
+            path: '/customRouter',
+            redirect: '/customRouter/menu1',
           },
           {
-            path: '/自定义router/menu1',
-            name: '自定义router-menu1',
+            exact: true,
+            path: '/customRouter/menu1',
             component: '@/pages/CustomRouter/component/Menu1',
           },
           {
-            path: '/自定义router/menu2',
-            name: '自定义router-menu2',
+            exact: true,
+            path: '/customRouter/menu2',
             component: '@/pages/CustomRouter/component/Menu2',
           },
         ],

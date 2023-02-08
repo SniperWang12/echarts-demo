@@ -92,9 +92,9 @@ const App: React.FC<IProps> = (props: IProps) => {
                 label: 'JS设计模式',
               },
               {
-                key: '/自定义Router',
+                key: '/customRouter',
                 icon: <BookOutlined />,
-                label: '自定义Router',
+                label: 'customRouter',
               },
               // {
               //   key: '3',

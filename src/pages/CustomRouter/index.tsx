@@ -1,16 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import {
-  AppstoreOutlined,
-  MailOutlined,
-  SettingOutlined,
-} from '@ant-design/icons';
+import { useEffect, useState } from 'react';
+import { AppstoreOutlined, MailOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Menu } from 'antd';
 
-const items: MenuProps['items'] = [
+const items = [
   {
     label: 'Navigation One',
-    key: 'menu1',
+    key: 'menu1', // 子路由
     icon: <MailOutlined />,
   },
   {
@@ -21,17 +17,18 @@ const items: MenuProps['items'] = [
 ];
 
 export default (props: any) => {
-  const [current, setCurrent] = useState('mail');
+  const [current, setCurrent] = useState<string>('mail');
 
   const onClick: MenuProps['onClick'] = (e) => {
-    setCurrent(e.key);
-    history.push(`/自定义Router/${e.key}`);
+    history.push(`/customRouter/${e.key}`);
   };
 
   useEffect(() => {
-    let pathName = location.pathname;
-    pathName.indexOf('menu2') != -1 && setCurrent('menu2');
-  }, []);
+    let path = location.pathname;
+    items.map((item) => {
+      path.indexOf(item.key) != -1 && setCurrent(item.key);
+    });
+  }, [location.pathname]);
 
   return (
     <Wrapper>
@@ -49,6 +46,7 @@ export default (props: any) => {
 
 import styled from 'styled-components';
 import { history } from 'umi';
+import { ItemType, MenuItemGroupType } from 'antd/lib/menu/hooks/useItems';
 const Wrapper = styled.div`
   .content-outer {
     width: 100%;
