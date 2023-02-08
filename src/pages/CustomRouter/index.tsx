@@ -46,7 +46,6 @@ export default (props: any) => {
 
 import styled from 'styled-components';
 import { history } from 'umi';
-import { ItemType, MenuItemGroupType } from 'antd/lib/menu/hooks/useItems';
 const Wrapper = styled.div`
   .content-outer {
     width: 100%;
