@@ -94,7 +94,12 @@ const App: React.FC<IProps> = (props: IProps) => {
               {
                 key: '/customRouter',
                 icon: <BookOutlined />,
-                label: 'customRouter',
+                label: '自定义路由（嵌套路由）',
+              },
+              {
+                key: '/web-worker',
+                icon: <BookOutlined />,
+                label: 'webworker',
               },
               // {
               //   key: '3',

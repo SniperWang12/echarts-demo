@@ -19,7 +19,7 @@ export default [
       {
         path: '/process',
         name: 'process',
-        component: '@/pages/WebWorker/index',
+        component: '@/pages/Process/index',
       },
       {
         path: '/progress',
@@ -57,6 +57,10 @@ export default [
             component: '@/pages/CustomRouter/component/Menu2',
           },
         ],
+      },
+      {
+        path: '/web-worker',
+        component: '@/pages/WebWorker/index',
       },
     ],
   },
