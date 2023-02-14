@@ -50,49 +50,15 @@ export default observer(() => {
   const handleSetValue = () => {
     setData(list);
   };
+  const [processNum1, setProcessNum1] = useSafeState(10);
   useEffect(() => {
     handleSetValue();
-  }, []);
-
-  const [left, setLeft] = useSafeState(0);
-
-  const mouseMove = (e: any) => {
-    if (store.canMove) {
-      var mouseMoveX = e.pageX - parent - 80;
-      let tempData = 0;
-      if (mouseMoveX > 350) {
-        tempData = 350;
-      } else if (mouseMoveX < 0) {
-        tempData = 0;
-      } else {
-        tempData = mouseMoveX;
-      }
-      console.log('tempData', tempData);
-      setLeft(tempData);
-    }
-  };
-  const mouseDown = () => {
-    setLeft(0);
-    store.canMove = true;
-  };
-  const mouseUp = () => {
-    if (store.canMove) {
-      store.canMove = false;
-      message.loading({ duration: 0, content: '正在判断' });
-      setTimeout(() => {
-        setLeft(0);
-        message.destroy();
-      }, 1000);
-    } else {
-      return;
-    }
-  };
-  const [parent, setParent] = useSafeState(0);
-  useEffect(() => {
-    document.body.onmouseup = mouseUp;
-    document.body.onmousemove = mouseMove;
-    let tempsSda = document.getElementById('img')!.getBoundingClientRect().left;
-    setParent(tempsSda);
+    let interval = setInterval(() => {
+      setProcessNum1(Math.random() * 100);
+    }, 2000);
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
 
   useEffect(() => {
@@ -103,7 +69,7 @@ export default observer(() => {
     <Wrapper>
       <Row>
         <ContentCard
-          content={<ProgressTech radius={180} progressNum={30} />}
+          content={<ProgressTech radius={180} progressNum={processNum1} />}
           title={'进度条1 ↓'}
           contentBgColor="black"
           code={process1Path}
@@ -116,30 +82,6 @@ export default observer(() => {
       </Row>
       <Button onClick={handleSetValue}>重新设置值</Button>
       <Child data={data} />
-
-      {/* <div
-        style={{ width: '100%', height: '100vh' }}
-        onMouseUp={mouseUp}
-        onMouseMove={mouseMove}
-      > */}
-      <div
-        id="outerouter"
-        className="process-line-outer"
-        // onMouseUp={mouseUp}
-        // onMouseMove={mouseMove}
-      >
-        <div
-          style={{
-            left: left + 'px',
-          }}
-          id="img"
-          className="process-img"
-          onMouseDown={mouseDown}
-        >
-          D
-        </div>
-        {/* </div> */}
-      </div>
     </Wrapper>
   );
 });

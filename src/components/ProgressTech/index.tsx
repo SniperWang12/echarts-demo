@@ -60,7 +60,7 @@ export default (props: Iprops) => {
         </div>
         <div className="data-outer flex">
           <div className="sanjiaoxing sanjiaoxing_left"></div>
-          <div className="data">{progressNum}%</div>
+          <div className="data">{progressNum.toFixed(2)}%</div>
           <div className="sanjiaoxing sanjiaoxing_right"></div>
         </div>
       </div>
@@ -84,7 +84,8 @@ const Wrapper = styled.div<IWrapper>`
         return props.rotateLeft + 'deg';
       }}
     );
-    transition: 0.3s ease-in, color 1s ease-out;
+    transition: 0.4s;
+    /* transition: 0.3s ease-in, color 1s ease-out; */
   }
   #loop-rc {
     transform: rotate(
@@ -92,7 +93,8 @@ const Wrapper = styled.div<IWrapper>`
         return props.rotateRight + 'deg';
       }}
     );
-    transition: 0.4s ease-in, color 0.5s ease-out;
+    transition: 0.4s;
+    /* transition: 0.4s ease-in, color 0.5s ease-out; */
   }
   .loop-pie {
     position: relative;
@@ -181,7 +183,7 @@ const Wrapper = styled.div<IWrapper>`
     flex-direction: column;
     width: 75%;
     height: 75%;
-    animation: spinn 1.4s linear infinite;
+    animation: spinn 1s linear infinite;
   }
   .yuan41 {
     width: 50%;
