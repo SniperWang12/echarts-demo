@@ -21,4 +21,5 @@ export default defineConfig({
     },
   },
   publicPath: '/',
+  webpack5: {},
 });

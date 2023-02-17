@@ -39,7 +39,8 @@
     "react-syntax-highlighter": "^15.5.0",
     "remark-gfm": "^3.0.1",
     "styled-components": "^5.3.5",
-    "umi": "^3.5.34"
+    "umi": "^3.5.34",
+    "worker-loader": "^3.0.8"
   },
   "devDependencies": {
     "@types/react": "^17.0.0",
