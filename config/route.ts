@@ -62,6 +62,10 @@ export default [
         path: '/web-worker',
         component: '@/pages/WebWorker/index',
       },
+      {
+        path: '/object',
+        component: '@/pages/Object/index',
+      },
     ],
   },
 ];

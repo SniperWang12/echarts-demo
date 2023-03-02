@@ -101,6 +101,11 @@ const App: React.FC<IProps> = (props: IProps) => {
                 icon: <BookOutlined />,
                 label: 'webworker',
               },
+              {
+                key: '/object',
+                icon: <BookOutlined />,
+                label: 'object',
+              },
               // {
               //   key: '3',
               //   icon: <UploadOutlined />,

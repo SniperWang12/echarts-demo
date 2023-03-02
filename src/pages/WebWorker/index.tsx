@@ -1,9 +1,73 @@
 import { observer } from 'mobx-react-lite';
 import Code from '@/components/Code';
+import { Button, message } from 'antd';
+import { useSafeState } from 'ahooks';
+import worker1 from './worker1';
 
 export default observer(() => {
+  const [worker, setWorker] = useSafeState<null | Worker>(null);
+
+  if (worker == null) {
+    const tempWorker = new Worker(worker1);
+    tempWorker.onmessage = function (event) {
+      console.log('Recevied message ' + event.data);
+      doSomething(event.data);
+    };
+    function doSomething(vl: any) {
+      console.log('doSomeThings', vl);
+    }
+
+    setWorker(tempWorker);
+  }
+  const handleCalc = () => {
+    worker?.postMessage(
+      JSON.stringify({
+        name: 'BeJson',
+        url: 'http://www.bejson.com',
+        page: 88,
+        isNonProfit: true,
+        address: {
+          street: '科技园路.',
+          city: '江苏苏州',
+          country: '中国',
+        },
+        links: [
+          {
+            name: 'Google',
+            url: 'http://www.google.com',
+          },
+          {
+            name: 'Baidu',
+            url: 'http://www.baidu.com',
+          },
+          {
+            name: 'SoSo',
+            url: 'http://www.SoSo.com',
+          },
+        ],
+      }),
+    );
+  };
+
+  const handleDisposeWorker = () => {
+    message.info('销毁！！');
+    worker?.terminate();
+    setWorker(null);
+  };
+
+  const [uiText, setUiText] = useSafeState('init');
   return (
     <>
+      <h1>{uiText}</h1>
+      <Button onClick={handleCalc}>很耗费时间的计算</Button>
+      <Button onClick={handleDisposeWorker}>取消很耗费时间的计算</Button>
+      <Button
+        onClick={() => {
+          setUiText(Math.random() + '');
+        }}
+      >
+        改变UI样式
+      </Button>
       <h2>浏览器UI线程</h2>
       <p>
         用于执行Javascript和更新用户界面的进程通常被称为浏览器UI线程，UI线程的工作基于一个简单的队列系统。浏览器会保存到队列中知道进程空闲。一旦空闲，队列中的下一个任务就被重新提取出来并运行。这些任务要么是运行js代码，要么执行UI更新，包括重绘和重排。
