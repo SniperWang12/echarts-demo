@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>High Energy Progress Bar</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #000;
+}
+
+.progress-container {
+  position: relative;
+  width: 300px;
+  height: 30px;
+}
+
+.progress-bar {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #222;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background-color: #00ff00;
+  animation: progressAnimation 2s linear infinite;
+}
+
+.glow {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  background-color: #00ff00;
+  opacity: 0.3;
+  border-radius: 50%;
+  animation: glowAnimation 2s linear infinite;
+}
+
+@keyframes progressAnimation {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+@keyframes glowAnimation {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+}
+
+</style>
+<body>
+  <div class="progress-container">
+    <div class="progress-bar">
+      <div class="progress"></div>
+    </div>
+    <div class="glow"></div>
+  </div>
+</body>
+<script >
+  // Optional: You can use JavaScript to simulate a loading delay
+// before hiding the progress bar once the content is loaded.
+
+window.addEventListener('load', () => {
+  const progressBar = document.querySelector('.progress');
+  progressBar.style.width = '100%';
+  
+  // Optional: You can add a delay to simulate a loading effect
+  setTimeout(() => {
+    progressBar.parentElement.parentElement.style.display = 'none';
+  }, 1000); // Add a 1-second delay (adjust as needed)
+});
+
+</script>
+</html>

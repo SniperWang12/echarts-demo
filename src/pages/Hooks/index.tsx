@@ -20,7 +20,7 @@ const UseTitleCom = () => {
   useTitle('你好');
   document.title = '你好';
   const titleChange = (e: InputProp) => {
-    // useTitle(e.target.value);
+    useTitle(e.target.value);
     // useThrottle(
     //   () => {
     //     useTitle(e.target.value);

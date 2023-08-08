@@ -4,6 +4,6 @@ const useTitle = (title: string) => {
   useEffect(() => {
     document.title = title;
   }, []);
-  return;
+  return <>磨脚</>;
 };
 export default useTitle;
